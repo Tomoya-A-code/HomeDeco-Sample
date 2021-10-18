@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+/*
+GENERAL STYLING
+================================================ */
+html {
+    font-size: 100%;
+}
+body {
+	color: #555;
+    text-align: center;
+}
+
+/*
+COMMON
+================================================ */
+.title {
+    font-size: 5.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Ephesis', cursive;
+}
+p {
+    line-height: 1.7;
+    font-size: 1.125rem;
+}
+
+.container {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*
+HERO
+================================================ */
+.hero {
+    background-image: url(../images/hero.jpg);
+    text-align: center;
+}
+
+.hero .title {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+
+/*
+Goods
+================================================ */
+.goods {
+    text-align: center;
+    
+}
+
+.goods .title {
+    padding-top: 20px;
+}
+
+.goods .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    margin-right: 0;
+    padding: 0 1rem;
+}
+
+.slider_fade {
+    position: relative;
+    margin-top: 50px;
+}
+
+.slider_fade li {
+    display: block;
+    width: 100%;  
+}
+
+.slider_fade li img {
+    display: block;
+    width: 60%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+ 
+.slider_fade > li {
+    position: absolute;
+    list-style: none;
+    visibility: hidden;
+    animation: anime_slider_fade 12s 0s infinite;
+}
+.slider_fade > li:nth-of-type(2) {
+    animation-delay: 4s;
+}
+.slider_fade > li:nth-of-type(3) {
+    animation-delay: 8s;
+}
+ 
+@keyframes anime_slider_fade {
+    0% {
+        visibility: visible;
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 1;
+    }
+    48.3% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/*
+CONTACT
+================================================ */
+.contact {
+    background-image: url(../images/contact_background.jpg);
+    text-align: center;
+    padding-top: 8vh;
+}
+
+.contact .wrapper {
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 10%;
+}
+
+.contact_text {
+    margin: 16px auto;
+	text-align: center;
+	display: block;
+}
+
+.contact_content {
+    font-weight: bold;
+    font-size: 23px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.contact_content:before {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: solid 15px transparent;
+    border-bottom: solid 15px black;
+}
+
+.contact_content:after {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: 10px;
+    width: 100%;
+    border-bottom: solid 3px black;
+}
+
+.contact_text p {
+    text-align: left;
+	display: inline-block;
+}
+
+.btn {
+    background: #555;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem 3.5rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 2rem 0 2.25rem;
+}
+.btn:hover {
+    background: #777;
+}
+.contact-sns {
+    display: flex;
+    justify-content: center;
+}
+.contact-sns a {
+    background: #fff;
+    width: 3.75rem;
+    height: 3.75rem;
+    display: inline-block;
+    margin: 0 .5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    padding: .75rem 0 0 .125rem;
+    color: #555;
+}
+.contact-sns a:hover {
+    background: rgba(255,255,255,.5);
+}
+
+/*
+MOBILE SIZE
+================================================ */
+@media (max-width: 700px) {
+    .title {
+        font-size: 4rem;
+    }
+    p {
+        padding: 0 1rem;
+    }
+    p,
+    .menu-list li {
+        font-size: 1rem;
+    }
+    .hero {
+        padding-top: 12vh;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero {
+        max-width: 100%;
+    }
+
+    .slider_fade {
+        display: block;
+        position: relative;
+
+    }
+
+    .slider_fade li img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .goods {
+        height: 50vh;
+    }
+
+}
